@@ -1,0 +1,66 @@
+%%[
+
+/* RETRIEVE FIELDS */
+SET @fname = [FirstName]
+SET @lname = [LastName]
+SET @donorID = [DonorID]
+SET @impactArea = [ImpactArea]
+
+/* RETRIEVE PROJECT DATA */
+SET @projectName = Lookup("Projects_Data", "ProjectName", "ImpactArea", @impactArea)
+SET @projectStatus = Lookup("Projects_Data", "CompletionStatus", "ImpactArea", @impactArea)
+SET @projectDesc = Lookup("Projects_Data", "ProjectDescription", "ImpactArea", @impactArea)
+SET @projectCompDate = Lookup("Projects_Data", "CompletionDate", "ImpactArea", @impactArea)
+
+SET @projectCompDateFormatted = FormatDate(@projectCompDate, "MMMM, YYYY")
+
+/* FNAME AND LNAME CLEANUP */
+IF EMPTY(@fname) THEN
+  SET @finalName = "Valued Customer" 
+  SET @subjectLine = "Thank You! Here’s How Your Support is Making an Impact"
+ELSE
+  SET @finalFirstName = Propercase(Trim(@fname)) 
+  SET @subjectLine = CONCAT("Thank You, ", @finalFirstName, "! Here’s How Your Support is Making an Impact")
+  IF EMPTY(@lname) THEN
+    SET @finalName = @finalFirstName
+  ELSE
+    SET @finalLastName = Propercase(Trim(@lname))
+    SET @finalName = CONCAT(@finalFirstName, " ", @finalLastName)
+  ENDIF
+ENDIF
+
+/* LOGIC TO CALCULATE TOTAL DONATION AMOUNT */
+SET @donationTotal = 0
+
+SET @rows = LookupRows("Donations","DonorID", @donorID)
+SET @rowCount = rowcount(@rows)
+
+IF  @rowCount > 0 THEN
+
+  for @i = 1 to @rowCount do
+
+    SET @row = row(@rows, @i) /* get row based on counter */
+    SET @DonationAmount = field(@row,"DonationAmount")
+    SET @donationTotal = Add(@donationTotal, @DonationAmount)
+    
+  next @i 
+
+ELSE
+  RaiseError("No donations found")
+ENDIF
+
+/* LOGIC FOR DYNAMIC DONATION COPY */
+IF @donationTotal < 500 THEN
+  SET @donationCopy = "We appreciate your support. Every bit of your contribution counts."
+ELSEIF @donationTotal >= 500 AND @donationTotal < 1000 THEN
+  SET @donationCopy = "As a token of our appreciation, we would like to invite you to an exclusive donor event. Click here to learn more."
+ELSEIF @donationTotal >= 1000 AND @donationTotal < 5000 THEN
+  SET @donationCopy = "We have a special thank-you video message from our CEO just for you. Watch it here."
+ELSE
+  SET @donationCopy = "We are honored to offer you a private tour of one of our conservation sites. Schedule your visit here."
+ENDIF
+
+/* FORMAT TOTAL DONATION AMOUNT*/
+SET @totalContributions = FormatNumber(@donationTotal, "C")
+
+]%%
