@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-# Green-Earth-Donation-Email
-=======
 # GreenEarth Personalized Thank-You Email
 
 ## Project Overview
