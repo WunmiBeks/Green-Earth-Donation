@@ -75,5 +75,5 @@ The total donation amount is calculated by summing the donations from multiple r
 
 ## 👩‍💻 Author
 Wunmi Ogunbekun
->>>>>>> 73a8972 (Add Data, README.md and the Ampscript logic for the email)
+
 
