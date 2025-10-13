@@ -25,22 +25,15 @@ The total donation amount is calculated by summing the donations from multiple r
 - Include the **total donation amount** in the email.
 - Dynamically insert a **personalized thank-you message** based on the amount donated by the donors.
 
-### Conditional Messaging
-- **≥$500 donors:** Invitation to an exclusive event and include link to learn more
-- **≥$1,000 donors:** Personalized thank-you video link from the CEO.
-- **≥$5,000 donors:** Offer for a private tour of a conservation site.
 
-+------------------+-------------------------------------------------------------------------+
-| **TotalDonationAmount** | **Copy**                                                                    |
-+------------------+-------------------------------------------------------------------------+
-| 500 - 1000        | As a token of our appreciation, we would like to invite you to an       |
-|                   | exclusive donor event. Click here to learn more.                        |
-| 1000 - 5000       | We have a special thank-you video message from our CEO just for you.    |
-|                   | Watch it here.                                                          |
-| >5000             | We are honored to offer you a private tour of one of our conservation  |
-|                   | sites. Schedule your visit here.                                        |
-| <500              | We appreciate your support. Every bit of your contribution counts.     |
-+------------------+-------------------------------------------------------------------------+            |
+### Dynamic Thank-You Messages
+
+| **Total Donation Amount** | **Message** |
+|---------------------------:|-------------|
+| **< 500** | We appreciate your support. Every bit of your contribution counts. |
+| **500 - 1000** | As a token of our appreciation, we would like to invite you to an exclusive donor event. Click here to learn more. |
+| **1000 - 5000** | We have a special thank-you video message from our CEO just for you. Watch it here. |
+| **> 5000** | We are honored to offer you a private tour of one of our conservation sites. Schedule your visit here. |
 
 
 ### Data Transformation
