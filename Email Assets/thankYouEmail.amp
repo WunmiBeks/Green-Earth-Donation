@@ -7,7 +7,7 @@ Dear %%=v(@finalName)=%%, <br> <br>
 We are deeply grateful for your generous contribution of %%=v(@totalContributions)=%% to GreenEarth. Your support is making a tremendous difference in the area of %%=v(@impactArea)=%%. <br> <br>
 
 <b>Project Update:</b> <br> <br>
-You'll be pleased to know that the %%=v(@projectName)=%% project is currently %%=v(@projectStatus)=%% complete. This project is focused on %%=v(@projectDesc)=%% and is expected to be completed by %%=v(@projectCompDateFormatted)=%%. <br> <br>
+You'll be pleased to know that the %%=v(@projectName)=%% project is currently %%=v(@projectStatus)=%% complete. This project focuses on %%=v(@projectDesc)=%% and is expected to be completed by %%=v(@projectCompDateFormatted)=%%. <br> <br>
 
 %%=v(@donationCopy)=%% <br> <br> <br>
 

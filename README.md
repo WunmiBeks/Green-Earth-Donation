@@ -58,11 +58,10 @@ The total donation amount is calculated by summing the donations from multiple r
 
 ---
 
-## Future Enhancements
+## Email Previews
+Here are the previews of the Thank you email:
 
-- Add **dynamic images or charts** for project impact
-
----
+![Thank-You Email Previe](Images/screenshots/)
 
 ## 👩‍💻 Author
 Wunmi Ogunbekun
