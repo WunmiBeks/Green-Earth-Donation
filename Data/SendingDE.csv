@@ -1,7 +1,7 @@
-DonorID,FirstName,LastName,ImpactArea,Tier
-1,john,  Smith    ,Wildlife,Silver
-2,sArAh,johnson ,Water,Gold
-3,Mike,williams  ,Energy,Silver
-4,Emma,  brown,Forests,Bronze
-5,chloe,Jones,Wildlife,Gold
-6,alan,white,Energy,Platinum
+DonorID,FirstName,LastName,ImpactArea,Tier,Email
+1,john, Smith,Wildlife,Silver,john@example.com
+2,sArAh,johnson,Water,Gold,sarah@example.com
+3,Mike,williams,Energy,Silver,mike@example.com
+4,Emma, brown,Forests,Bronze,emma@example.com
+5,chloe,Jones,Wildlife,Gold,chloe@example.com
+6,alan,white,Energy,Platinum,alan@example.com

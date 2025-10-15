@@ -1,66 +1,23 @@
-%%[
+Subject Line: %%=v(@subjectLine)=%%
 
-/* RETRIEVE FIELDS */
-SET @fname = [FirstName]
-SET @lname = [LastName]
-SET @donorID = [DonorID]
-SET @impactArea = [ImpactArea]
+%%=v(@image)=%%
 
-/* RETRIEVE PROJECT DATA */
-SET @projectName = Lookup("Projects_Data", "ProjectName", "ImpactArea", @impactArea)
-SET @projectStatus = Lookup("Projects_Data", "CompletionStatus", "ImpactArea", @impactArea)
-SET @projectDesc = Lookup("Projects_Data", "ProjectDescription", "ImpactArea", @impactArea)
-SET @projectCompDate = Lookup("Projects_Data", "CompletionDate", "ImpactArea", @impactArea)
+Dear %%=v(@finalName)=%%, <br> <br>
 
-SET @projectCompDateFormatted = FormatDate(@projectCompDate, "MMMM, YYYY")
+We are deeply grateful for your generous contribution of %%=v(@totalContributions)=%% to GreenEarth. Your support is making a tremendous difference in the area of %%=v(@impactArea)=%%. <br> <br>
 
-/* FNAME AND LNAME CLEANUP */
-IF EMPTY(@fname) THEN
-  SET @finalName = "Valued Customer" 
-  SET @subjectLine = "Thank You! Here’s How Your Support is Making an Impact"
-ELSE
-  SET @finalFirstName = Propercase(Trim(@fname)) 
-  SET @subjectLine = CONCAT("Thank You, ", @finalFirstName, "! Here’s How Your Support is Making an Impact")
-  IF EMPTY(@lname) THEN
-    SET @finalName = @finalFirstName
-  ELSE
-    SET @finalLastName = Propercase(Trim(@lname))
-    SET @finalName = CONCAT(@finalFirstName, " ", @finalLastName)
-  ENDIF
-ENDIF
+<b>Project Update:</b> <br> <br>
+You'll be pleased to know that the %%=v(@projectName)=%% project is currently %%=v(@projectStatus)=%% complete. This project is focused on %%=v(@projectDesc)=%% and is expected to be completed by %%=v(@projectCompDateFormatted)=%%. <br> <br>
 
-/* LOGIC TO CALCULATE TOTAL DONATION AMOUNT */
-SET @donationTotal = 0
+%%=v(@donationCopy)=%% <br> <br> <br>
 
-SET @rows = LookupRows("Donations","DonorID", @donorID)
-SET @rowCount = rowcount(@rows)
+<b>A Special Message from Our CEO:</b> <br> <br>
 
-IF  @rowCount > 0 THEN
+Dear %%=v(@finalName)=%%, <br>
+Your commitment to our mission at GreenEarth is truly inspiring. Together, we are making the world a better place. Thank you for being a vital part of our community. <br>
 
-  for @i = 1 to @rowCount do
+We look forward to continuing this journey with you and making even greater strides in our mission. <br> <br>
+Warm regards, <br>
+James Cena <br> <b>Chief Executive Officer</b> <br>
 
-    SET @row = row(@rows, @i) /* get row based on counter */
-    SET @DonationAmount = field(@row,"DonationAmount")
-    SET @donationTotal = Add(@donationTotal, @DonationAmount)
-    
-  next @i 
 
-ELSE
-  RaiseError("No donations found")
-ENDIF
-
-/* LOGIC FOR DYNAMIC DONATION COPY */
-IF @donationTotal < 500 THEN
-  SET @donationCopy = "We appreciate your support. Every bit of your contribution counts."
-ELSEIF @donationTotal >= 500 AND @donationTotal < 1000 THEN
-  SET @donationCopy = "As a token of our appreciation, we would like to invite you to an exclusive donor event. Click here to learn more."
-ELSEIF @donationTotal >= 1000 AND @donationTotal < 5000 THEN
-  SET @donationCopy = "We have a special thank-you video message from our CEO just for you. Watch it here."
-ELSE
-  SET @donationCopy = "We are honored to offer you a private tour of one of our conservation sites. Schedule your visit here."
-ENDIF
-
-/* FORMAT TOTAL DONATION AMOUNT*/
-SET @totalContributions = FormatNumber(@donationTotal, "C")
-
-]%%

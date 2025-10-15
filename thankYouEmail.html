@@ -1,0 +1,107 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thank You Email</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333333;
+  }
+  .email-container {
+    max-width: 600px;
+    margin: 30px auto;
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  .hero {
+    width: 100%;
+    display: block;
+  }
+  .content {
+    padding: 20px;
+    line-height: 1.6;
+  }
+  .content h1 {
+    font-size: 22px;
+    color: #2e7d32; /* Green for GreenEarth */
+    margin-bottom: 10px;
+  }
+  .content p {
+    margin-bottom: 15px;
+  }
+  .signature {
+    text-align: left;
+    padding: 0 20px 30px 20px;
+    line-height: 1.4;
+  }
+  .signature p {
+    margin: 4px 0;
+  }
+  .signature .name {
+    font-weight: bold;
+    margin-top: 8px;
+  }
+  .signature .title {
+    font-style: italic;
+    color: #2e7d32;
+  }
+  .footer {
+    font-size: 12px;
+    color: #888888;
+    text-align: center;
+    padding: 15px 20px;
+    border-top: 1px solid #eeeeee;
+  }
+</style>
+
+<div class="email-container">
+  <!-- Hero Image -->
+  <img src="%%=v(@image)=%%" alt="GreenEarth Hero Image" class="hero">
+
+  <div class="content">
+    <!-- Greeting -->
+    <p>Dear %%=v(@finalName)=%%,</p>
+
+    <!-- Main Message -->
+    <p>We are deeply grateful for your generous contribution of 
+      <span style="color:#2e7d32;">%%=v(@totalContributions)=%%</span> 
+      to GreenEarth. Your support is making a tremendous difference in the area of 
+      <span style="color:#2e7d32;">%%=v(@impactArea)=%%</span>.
+    </p>
+
+    <h1>Project Update</h1>
+    <p>You'll be pleased to know that the <strong>%%=v(@projectName)=%%</strong> project is currently 
+      <span style="color:#2e7d32;">%%=v(@projectStatus)=%%</span> complete. 
+      This project focuses on %%=v(@projectDesc)=%% and is expected to be completed by 
+      <strong>%%=v(@projectCompDateFormatted)=%%</strong>.
+    </p>
+
+    <!-- Personalized Donation Copy -->
+    <p>
+      %%=v(@donationCopy)=%% 
+      <a href="%%=RedirectTo(@URL)=%%" target="_blank" style="color:#2e7d32; text-decoration:none;">%%=v(@linkText)=%%</a>
+    </p>
+
+    <!-- CEO Message -->
+    <h1>A Special Message from Our CEO</h1>
+    <p>Dear %%=v(@finalName)=%%,</p>
+    <p>Your commitment to our mission at GreenEarth is truly inspiring. Together, we are making the world a better place. Thank you for being a vital part of our community.</p>
+    <p>We look forward to continuing this journey with you and making even greater strides in our mission.</p>
+  </div>
+
+  <!-- Signature -->
+  <div class="signature">
+    <p>Warm regards,</p>
+    <p class="name">Wayne Rooney</p>
+    <p class="title">CEO, GreenEarth</p>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    &copy; %%=Format(Now(),"yyyy")=%% GreenEarth. All rights reserved.
+  </div>
+</div>
