@@ -62,9 +62,13 @@ The total donation amount is calculated by summing the donations from multiple r
 Here are the previews of the dynamic Thank-You email:
 
 ![Email with Personalization Strings](./ProjectScreenshots/emailPersonalizationStrings.png)
+
 ![Email with Personalization Strings](./ProjectScreenshots/dynamicEmailPreview1.png)
+
 ![Email with Personalization Strings](./ProjectScreenshots/dynamicEmailPreview2.png)
+
 ![Email with Personalization Strings](./ProjectScreenshots/dynamicEmailPreview3.png)
+
 ![Email with Personalization Strings](./ProjectScreenshots/emailPreview_Sample2.png)
 
 ---
