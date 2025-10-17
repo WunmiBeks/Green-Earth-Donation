@@ -80,6 +80,8 @@ Here are the previews of the dynamic Thank-You email:
 ![Email with Personalization Strings](./ProjectScreenshots/emailPreview_Sample2.png)
 
 
+
+
 ---
 
 ## 👩‍💻 Author
