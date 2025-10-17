@@ -58,12 +58,21 @@ The total donation amount is calculated by summing the donations from multiple r
 
 ---
 
-## Email Previews
-Here are the previews of the Thank you email:
+## Email Preview Walkthrough
+Here are the previews of the dynamic Thank-You email:
 
-![Thank-You Email Previe](Images/screenshots/)
+![Email with Personalization Strings](./ProjectScreenshots/emailPersonalizationStrings.png)
+![Email with Personalization Strings](./ProjectScreenshots/dynamicEmailPreview1.png)
+![Email with Personalization Strings](./ProjectScreenshots/dynamicEmailPreview2.png)
+![Email with Personalization Strings](./ProjectScreenshots/dynamicEmailPreview3.png)
+![Email with Personalization Strings](./ProjectScreenshots/emailPreview_Sample2.png)
+
+---
 
 ## 👩‍💻 Author
-Wunmi Ogunbekun
+**Wunmi Ogunbekun**
+Salesforce Marketing Cloud Expert | Digital Marketer
+📫 [LinkedIn](linkedin.com/in/wuminebek/)
+
 
 
