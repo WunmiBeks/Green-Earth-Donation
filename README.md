@@ -71,6 +71,7 @@ Here are the previews of the dynamic Thank-You email:
 
 ![Email with Personalization Strings](./ProjectScreenshots/dynamicEmailPreview2.png)
 
+---
 
 ![Email with Personalization Strings](./ProjectScreenshots/dynamicEmailPreview3.png)
 
