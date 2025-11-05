@@ -10,18 +10,12 @@
 
 ---
 
-
-## Project Overview
-
 ## Project Overview
 
 A dynamic AMPscript-driven thank-you email created for **GreenEarth** to recognize donors based on total contributions.  
 The project demonstrates **personalization without Journey Builder**, using AMPscript to calculate total donations, render conditional content, and display dynamic images hosted in **Salesforce Content Builder** based on each donor’s supported cause.
 
 ---
-
-## Solution Walkthrough
-
 
 ## Solution Walkthrough
 This walkthrough outlines the data setup, AMPscript logic, and email previews used to demonstrate personalization in Salesforce Marketing Cloud.
@@ -148,9 +142,6 @@ ENDIF
 
 ]%%
 ```
-<div align="center">
-<em>AMPscript logic block — retrieves donor data, calculates total donations, and renders personalized thank-you content.</em>
-</div>
 
 ---
 
@@ -227,5 +218,3 @@ This project showcases how AMPscript can be used to create dynamic, data-driven 
 Built entirely with AMPscript, it demonstrates how data from multiple extensions powers targeted and personalized donor communications directly within the email template.
 
 
-
-http://image.theblackforce.ca/lib/fe2f117371640475751078/m/1/5c96e4c6-b449-4d8a-b9c9-b8d84b845f1e.jpg
