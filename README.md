@@ -135,7 +135,7 @@ SET @totalContributions = FormatNumber(@donationTotal, "C")
 IF @impactArea == "Wildlife" THEN 
   SET @image = "http://image.greenearth.ca/lib/fe2f117371640475751078/m/1/5c96e4c6-b449-4d8a-b9c9-b8d84b845f1e.jpg"
 
-ELSEIF @projecimpactAreatName == "Water" THEN 
+ELSEIF @impactArea == "Water" THEN 
   SET @image = "http://image.greenearth.ca/lib/fe2f117371640475751078/m/1/238749be-1ad1-4af5-b6a6-90b6fa44db95.jpeg"
 
 ELSEIF @impactArea == "Energy" THEN
@@ -163,7 +163,7 @@ This section demonstrates how the personalized thank-you email renders dynamical
 #### 1. Email Template with AMPscript Personalization Strings
 
 <div align="center">
-<img src="https://github.com/WunmiBeks/Green-Earth-Donation/raw/main/ProjectScreenshots/emailPreview_Sample2.png" width="750" alt="Email Template with Personalization Strings"/>
+<img src="https://github.com/WunmiBeks/Green-Earth-Donation/raw/main/ProjectScreenshots/emailPersonalizationStrings.png" width="750" alt="Email Template with Personalization Strings"/>
 <br>
 <em>Initial email template showing personalization strings used to render dynamic content.</em>
 </div>
@@ -173,7 +173,7 @@ This section demonstrates how the personalized thank-you email renders dynamical
 #### 2. Preview Comparison – Donor Data 
 
 <div align="center">
-<img src="https://github.com/WunmiBeks/Green-Earth-Donation/raw/main/Projects_Data/dynamicEmailPreview1.png" width="750" alt="Email Preview with Donor Data"/>
+<img src="https://github.com/WunmiBeks/Green-Earth-Donation/raw/main/ProjectScreenshots/dynamicEmailPreview1.png" width="750" alt="Email Preview with Donor Data"/>
 <br>
 <em>Preview showing how donor attributes (First Name, Last Name, Impact Area, Tier) from the Sending Data Extension populate the email dynamically.</em>
 </div>
@@ -183,7 +183,7 @@ This section demonstrates how the personalized thank-you email renders dynamical
 #### 3. Preview Comparison – Donations Data 
 
 <div align="center">
-<img src="https://github.com/WunmiBeks/Green-Earth-Donation/raw/main/Projects_Data/dynamicEmailPreview2.png" width="750" alt="Email Preview with Donation Data"/>
+<img src="https://github.com/WunmiBeks/Green-Earth-Donation/raw/main/ProjectScreenshots/dynamicEmailPreview2.png" width="750" alt="Email Preview with Donation Data"/>
 <br>
 <em>The donation amount displayed in the preview is dynamically pulled from the <strong>DonationAmount</strong> field in the <strong>Donations</strong> Data Extension.</em>
 </div>
@@ -193,42 +193,30 @@ This section demonstrates how the personalized thank-you email renders dynamical
 #### 4. Preview Comparison – Project Data 
 
 <div align="center">
-<img src="https://github.com/WunmiBeks/Green-Earth-Donation/raw/main/Projects_Data/EmailPreview_ProjectData.png" width="750" alt="Email Preview with Project Data"/>
+<img src="https://github.com/WunmiBeks/Green-Earth-Donation/raw/main/ProjectScreenshots/dynamicEmailPreview3.png" width="750" alt="Email Preview with Project Data"/>
 <br>
 <em>Highlighted fields such as <strong>Project Name</strong>, <strong>Description</strong>, <strong>Completion Status</strong>, and <strong>Completion Date</strong> are dynamically pulled from the <strong>Projects_Data</strong> Data Extension.</em>
 </div>
 
 ---
 
-#### 5. Dynamic Email Previews for Multiple Donors
-
-<div align="center">
-<img src="https://github.com/WunmiBeks/Green-Earth-Donation/raw/main/Images/dynamicEmailPreview1.png" width="750" alt="Dynamic Email Preview 1"/>
-<br><br>
-<img src="https://github.com/WunmiBeks/Green-Earth-Donation/raw/main/Images/dynamicEmailPreview2.png" width="750" alt="Dynamic Email Preview 2"/>
-<br><br>
-<img src="https://github.com/WunmiBeks/Green-Earth-Donation/raw/main/Images/dynamicEmailPreview3.png" width="750" alt="Dynamic Email Preview 3"/>
-<br>
-<em>Final test emails showing dynamic images and personalized content rendered for different donors based on their data.</em>
-</div>
-
-#### 6. Final Email Output
+#### 5. Final Email Output
 
 Below are two examples of the final thank-you email as received by different donors after AMPscript rendering and personalization.  
 Each version dynamically displays the donor’s name, total contributions, project information, and an image corresponding to their selected impact area, retrieved from **Salesforce Content Builder**.
 
 <div align="center">
-<img src="https://github.com/WunmiBeks/Green-Earth-Donation/raw/main/Images/TestEmail_Received_1.png" width="750" alt="Final Test Email – Wildlife Donor"/>
+<img src="https://github.com/WunmiBeks/Green-Earth-Donation/raw/main/ProjectScreenshots/wildlife.png" width="750" alt="Final Test Email – Wildlife Donor"/>
 <br>
-<em>Final rendered email for a donor supporting the <strong>Wildlife</strong> project — personalized copy, donor data, and corresponding image displayed.</em>
+<em>Final rendered email for a donor supporting the <strong>Wildlife</strong> project — personalized content, donor data, and corresponding image displayed.</em>
 </div>
 
 <br>
 
 <div align="center">
-<img src="https://github.com/WunmiBeks/Green-Earth-Donation/raw/main/Images/TestEmail_Received_2.png" width="750" alt="Final Test Email – Energy Donor"/>
+<img src="https://github.com/WunmiBeks/Green-Earth-Donation/raw/main/ProjectScreenshots/energy.png" width="750" alt="Final Test Email – Energy Donor"/>
 <br>
-<em>Final rendered email for a donor supporting the <strong>Energy</strong> project — dynamic content and visuals reflecting the donor’s selected cause.</em>
+<em>Final rendered email for a donor supporting the <strong>Energy</strong> project — dynamic content and donor data, and corresponding image displayed.</em>
 </div>
 
 ---
@@ -237,3 +225,7 @@ Each version dynamically displays the donor’s name, total contributions, proje
 
 This project showcases how AMPscript can be used to create dynamic, data-driven personalization in Salesforce Marketing Cloud.  
 Built entirely with AMPscript, it demonstrates how data from multiple extensions powers targeted and personalized donor communications directly within the email template.
+
+
+
+http://image.theblackforce.ca/lib/fe2f117371640475751078/m/1/5c96e4c6-b449-4d8a-b9c9-b8d84b845f1e.jpg
